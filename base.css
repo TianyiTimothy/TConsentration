@@ -1,3 +1,8 @@
+#body{
+  background-image: url("img/background.jpg");
+  background-size: 100%;
+}
+
 .card {
     border: 1px solid #ccc;
     width: 200px;
@@ -15,8 +20,12 @@
     transform-style: preserve-3d;
     cursor: pointer;
   }
+  /* disable click event */
+  .card-wrapper.matched,
   .card-wrapper.active {
     transform: rotateY(180deg);
+    pointer-events: none;
+    cursor: default;
   }
   .card-face {
     position: absolute;
@@ -33,9 +42,33 @@
   .card-back {
     background-color: #fff;
     color: black;
+    opacity: 0.3;
   }
   
   .card-front {
     background-color: #4577dc;
     transform: rotateY(180deg);
   }
+
+.heading{
+  display: block;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.card-container{
+  width: 1200px;
+  margin: 0 auto;
+}
+.disabled{
+  pointer-events: none;
+  cursor: default;
+}
+.message{
+  font-weight: bold;
+  font-size: 2.5em;
+  height: 40px;
+}
+.hide{
+  display: none;
+}

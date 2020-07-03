@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="base.css">
 </head>
 
-<body>
+<body id="body">
     <div id="app">
-        <!-- {{test}} -->
-
+        <h1>consentration game</h1>
+        <div class="heading">
+            <span>moves: {{moves}}</span>
+            <span>matched: {{matchedCards}}</span>
+        </div>
+        <!-- <div class="heading">
+            <span>{{timer}} seconds used</span>
+        </div> -->
+        <div class="message">
+            {{message}}
+        </div>
         <div class="card-container">
-            <card v-for="card in cards" :card="card" :key="card.id"
+            <card v-for="card in cards" :card="card" @activate="activateCard" :key="card.id"
             @flip="compareCards">
             </card>
         </div>
